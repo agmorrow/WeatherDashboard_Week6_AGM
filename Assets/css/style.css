@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  background-color: #EEECEB;
+  text-align: center;
+  border: 4px solid #75B7BA;
+}
+
+
+
+
+.content {
+  display: flex;
+}
+
+/* Left and right column */
+.searchByCity  {
+  flex: 15%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.resultsBox {
+  flex: 85%;
+}
+
+
+
+
+
