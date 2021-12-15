@@ -7,7 +7,7 @@ const wind = document.querySelector('.wind');
 const uv = document.querySelector('.uv');
 
 
-document.getElementById('searchBtn').addEventListener('click', function() {
+function currentWeatherApi() {
    fetch('https://api.openweathermap.org/data/2.5/weather?q='+searchInput.value+'&appid=8cdc26e92900b592593fbaf2a991cf6e')
    .then(response => response.json())
    .then(data => {
@@ -26,9 +26,20 @@ document.getElementById('searchBtn').addEventListener('click', function() {
       hum.innerHTML = 'Humidity: ' + humValue + ' %';
 
    })
-   
-   
+}
+
+function fiveDayWeatherApi() {
+   fetch('https://api.openweathermap.org/data/2.5/forecast?q='+searchInput.value+'&appid=8cdc26e92900b592593fbaf2a991cf6e')
+   .then(response => response.json())
+   .then(data => {
+      console.log(data);
+   })
+}
 
 
+
+searchBtn.addEventListener('click', function() {
+currentWeatherApi();
+fiveDayWeatherApi();
 
 })

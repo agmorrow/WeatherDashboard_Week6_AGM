@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  background-color: #222831;
 }
 
 body {
@@ -8,13 +9,16 @@ body {
 
 /* Style the header */
 .header {
-  background-color: #EEECEB;
+  background-color: #393E46;
+  color: whitesmoke;
   text-align: center;
-  border: 4px solid #75B7BA;
+  border: 4px solid #00FFF5;
+  margin-bottom: 20px;
 }
 
-
-
+.headerH1 {
+  background-color: #393E46;
+}
 
 .content {
   display: flex;
@@ -26,12 +30,41 @@ body {
   display: flex;
   flex-direction: column;
   margin-right: 20px;
+  margin-left: 20px;
+  color: whitesmoke;
+}
+
+#searchInput {
+  background-color: whitesmoke;
+  border: 1px solid #00FFF5;
+  margin-bottom: 20px;
+}
+
+#searchBtn {
+  border-radius: 10px;
+  font-size: 18px;
+  color: whitesmoke;
+  background-color:#00ADB5;
+}
+
+#searchBtn:hover {
+  background-color: #00acb5c4;
 }
 
 .resultsBox {
   flex: 85%;
 }
 
+
+.cityResults {
+  border: 1px solid #00FFF5;
+  margin-right: 20px;
+  color: whitesmoke;
+}
+
+.futureForecast {
+  color: whitesmoke;
+}
 
 
 
