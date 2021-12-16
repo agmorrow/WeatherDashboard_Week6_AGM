@@ -13,13 +13,11 @@ function currentWeatherApi() {
    .then(data => {
       console.log(data);
 
-
       let nameValue = data['name'];
       let tempValue = data['main']['temp'];
       let windValue = data['wind']['speed'];
       let humValue = data['main']['humidity'];
       
-
       name.innerHTML = nameValue;
       temp.innerHTML = 'Temp: ' + tempValue;
       wind.innerHTML = 'Wind: ' + windValue + ' MPH';
