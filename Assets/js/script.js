@@ -5,10 +5,11 @@ const temp = document.querySelector('.temp');
 const hum = document.querySelector('.hum');
 const wind = document.querySelector('.wind');
 const uv = document.querySelector('.uv');
+const date = document.querySelector('.date');
 
 
 function currentWeatherApi() {
-   fetch('https://api.openweathermap.org/data/2.5/weather?q='+searchInput.value+'&appid=8cdc26e92900b592593fbaf2a991cf6e')
+   fetch('https://api.openweathermap.org/data/2.5/weather?q='+searchInput.value+'&units=imperial&appid=8cdc26e92900b592593fbaf2a991cf6e')
    .then(response => response.json())
    .then(data => {
       console.log(data);
@@ -17,11 +18,14 @@ function currentWeatherApi() {
       let tempValue = data['main']['temp'];
       let windValue = data['wind']['speed'];
       let humValue = data['main']['humidity'];
+      let dateValue = data['dt'];
       
       name.innerHTML = nameValue;
-      temp.innerHTML = 'Temp: ' + tempValue;
+      temp.innerHTML = 'Temp: ' + tempValue + ' &#176F';
       wind.innerHTML = 'Wind: ' + windValue + ' MPH';
       hum.innerHTML = 'Humidity: ' + humValue + ' %';
+      date.innerHTML = dateValue;
+
 
    })
 }
