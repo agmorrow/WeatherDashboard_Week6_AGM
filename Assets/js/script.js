@@ -6,6 +6,7 @@ const hum = document.querySelector('.hum');
 const wind = document.querySelector('.wind');
 const uv = document.querySelector('.uv');
 const date = document.querySelector('.date');
+const weatherImg = document.getElementById('iconImg');
 const futureTemp = document.querySelector('.futureTemp');
 const futureHum = document.querySelector('.futureHum');
 const futureWind = document.querySelector('.FutureWind');
@@ -33,6 +34,9 @@ function currentWeatherApi() {
          })
          .then(function (data) {
             let nameValue = data['name'];
+            let iconValue = data['current']['weather'][0]['icon'];
+            let iconImg = 'http://openweathermap.org/img/wn/' + iconValue + '@2x.png'
+            weatherImg.src = iconImg;
             let tempValue = data['current']['temp'];
             let windValue = data['current']['wind_speed'];
             let humValue = data['current']['humidity'];
@@ -41,7 +45,7 @@ function currentWeatherApi() {
             const milliseconds = dateValue * 1000;
             const dateObject = new Date(milliseconds).toLocaleDateString();
             
-            name.innerHTML = nameValue + ' ('+dateObject+')';
+            name.innerHTML = nameValue + ' ('+dateObject+')' + weatherImg;
             temp.innerHTML = 'Temp: ' + tempValue + ' &#176F';
             wind.innerHTML = 'Wind: ' + windValue + ' MPH';
             hum.innerHTML = 'Humidity: ' + humValue + ' %';
