@@ -7,11 +7,7 @@ const wind = document.querySelector('.wind');
 const uv = document.querySelector('.uv');
 const date = document.querySelector('.date');
 const weatherImg = document.getElementById('iconImg');
-const futureTemp = document.querySelector('.futureTemp');
-const futureHum = document.querySelector('.futureHum');
-const futureWind = document.querySelector('.FutureWind');
-const futureUv = document.querySelector('.futureUv');
-const futureDate = document.querySelector('.futureDate');
+const displayBox = document.querySelector('.displayBox');
 
 
 
@@ -21,37 +17,42 @@ function currentWeatherApi() {
       return response.json();
    })
 
-   
    .then(function (data) {
-      let latValue = data.coord.lat;
+      let latValue = data['coord']['lat'];
       let lat = latValue.toFixed(2);
-      let lonValue = data.coord.lon;
+      let lonValue = data['coord']['lon'];
       let lon = lonValue.toFixed(2);
+      let nameValue = data['name'];
 
          fetch('https://api.openweathermap.org/data/2.5/onecall?lat='+ lat + '&lon=' + lon +'&units=imperial&appid=8cdc26e92900b592593fbaf2a991cf6e')
          .then(function (response) {
             return response.json(); 
          })
          .then(function (data) {
-            let nameValue = data['name'];
+           
+           
+
             let iconValue = data['current']['weather'][0]['icon'];
-            let iconImg = 'http://openweathermap.org/img/wn/' + iconValue + '@2x.png'
-            weatherImg.src = iconImg;
             let tempValue = data['current']['temp'];
             let windValue = data['current']['wind_speed'];
             let humValue = data['current']['humidity'];
             let uvValue = data['current']['uvi'];
-            let dateValue = data['dt'];
+            let dateValue = data['current']['dt'];
             const milliseconds = dateValue * 1000;
             const dateObject = new Date(milliseconds).toLocaleDateString();
+
+            weatherImg.setAttribute('src', 'http://openweathermap.org/img/wn/' + iconValue + '@2x.png');
             
-            name.innerHTML = nameValue + ' ('+dateObject+')' + weatherImg;
-            temp.innerHTML = 'Temp: ' + tempValue + ' &#176F';
-            wind.innerHTML = 'Wind: ' + windValue + ' MPH';
-            hum.innerHTML = 'Humidity: ' + humValue + ' %';
-            uv.innerHTML = 'UV Index: '+ uvValue;
+            name.innerHTML = nameValue + ' ('+dateObject+')';
+            temp.innerHTML = tempValue + ' &#176F';
+            wind.innerHTML = windValue + ' MPH';
+            hum.innerHTML = humValue + ' %';
+            uv.innerHTML = uvValue;
             console.log(data);
+            console.log(weatherImg);
+            
          }) 
+
       })
       }  
          
