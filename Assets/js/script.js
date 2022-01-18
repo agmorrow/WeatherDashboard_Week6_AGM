@@ -1,5 +1,5 @@
 const searchBtn = document.querySelector('#searchBtn');
-const searchInput = document.querySelector('#searchInput');
+let searchInput = document.querySelector('#searchInput');
 const name = document.querySelector('.name');
 const temp = document.querySelector('.temp');
 const hum = document.querySelector('.hum');
@@ -9,41 +9,6 @@ const date = document.querySelector('.date');
 const weatherImg = document.getElementById('iconImg');
 const displayBox = document.querySelector('.displayBox');
 const futureForecast = document.querySelector('.icons');
-const searchStorage = document.querySelector('#searchStorage');
-
-
-let storedCities = [];
-
-// The following function renders cities in a list
-
-function renderCities() {
-   searchStorage.innerHTML = "";
-   for (var i = 0; i < storedCities.length; i++) {
-      var storedCity = storedCities[i];
-      var li = document.createElement('li');
-      li.textContent = storedCity;
-      li.setAttribute("data-index", i);
-      var button = document.createElement("button");
-      button.textContent = button;
-      li.appendChild(button);
-      searchStorage.appendChild(li);
-   }
-}
-
-function init() {
-   searchInput = JSON.parse(localStorage.getItem("cities"));
-
-   if (storedSearch !== null) {
-      storedCities = storedSearch;
-   }
-
-   renderSearch();
-}
-
-function storeSearch() {
-   localStorage.setItem("cities", JSON.stringify(storedCities));
-}
-
 
 
 
@@ -54,6 +19,8 @@ function currentWeatherApi() {
          return response.json();
       })
 
+   
+
       .then(function (data) {
          let latValue = data['coord']['lat'];
          let lat = latValue.toFixed(2);
@@ -62,7 +29,6 @@ function currentWeatherApi() {
          let nameValue = data['name'];
          console.log(data);
          
-        
 
          fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&units=imperial&appid=8cdc26e92900b592593fbaf2a991cf6e')
             .then(function (response) {
@@ -102,8 +68,6 @@ function currentWeatherApi() {
                document.querySelector("#uvValue").setAttribute("class", colorClass);
                uv.textContent = uvValue;
                console.log(data);
-
-             
                
          // Shows the five-day forecast
                for (i = 1; i < 6; i++) {
@@ -134,20 +98,7 @@ function currentWeatherApi() {
       })
 }
 
-
-
-searchBtn.addEventListener('click', function (event) {
-   event.preventDefault();
-   var cityText = searchInput.value.trim();
-   if (cityText === "") {
-      return;
-   }
-
-   storedCities.push(cityText);
-   searchInput.value = "";
-   
-   storeSearch();
-   renderCities();
+searchBtn.addEventListener('click', function () {
    currentWeatherApi();
-   // fiveDayWeatherApi();
-})
+});
+

@@ -1,23 +1,26 @@
 * {
   box-sizing: border-box;
-  background-color: rgb(233, 233, 233);
 }
 
 body {
   margin: 0;
+  background: linear-gradient(180deg, rgb(84, 179, 214) 0%, rgb(217, 231, 233) 100%);
+
 }
 
 /* Style the header */
 .header {
-  background-color: rgb(233, 233, 233);
+  background-color: #0168a0;
   color: black;
   text-align: center;
-  border: 4px solid #00acb5c4;
+  font-family: Spartan;
+  border: 4px solid #0168a0;
   margin-bottom: 20px;
 }
 
 .headerH1 {
-  background-color: rgb(233, 233, 233);
+  background-color: #0168a0;
+  color: white;
 }
 
 .content {
@@ -31,24 +34,32 @@ body {
   flex-direction: column;
   margin-right: 20px;
   margin-left: 20px;
-  color: black;
+  color: white;
+  font-family: Spartan;
+  font-size: 15px;
 }
 
 #searchInput {
-  background-color: whitesmoke;
-  border: 1px solid #00acb5c4;
+  background-color: #0168a0;
+  height: 30px;
+  color:white;
   margin-bottom: 20px;
+  border-radius: 8px;
+  font-family: Quicksand;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #searchBtn {
-  border-radius: 10px;
+  border-radius: 8px;
   font-size: 18px;
   color: black;
-  background-color: #00ADB5;
+  background-color: white;
+  font-family: Quicksand;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #searchBtn:hover {
-  background-color: #00acb5c4;
+  background-color: rgb(233, 233, 233);
 }
 
 .resultsBox {
@@ -56,13 +67,19 @@ body {
 }
 
 .cityResults {
-  border: 2px solid #00acb5c4;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
   margin-right: 20px;
   color: black;
+  background-color: white;
+  font-family:Quicksand;
+
 }
 
 .futureHeading {
-  color: black;
+  color: white;
+  font-family: Spartan;
+  font-size: 26px;
 }
 
 .futureForecast {
@@ -85,6 +102,12 @@ body {
   display: flex;
   align-items: center;
   height: 50px;
+  margin-left: 15px;
+}
+
+.displayBox {
+  margin-left: 15px;
+  padding-bottom: 20px;
 }
 
 #iconImg {
@@ -98,17 +121,17 @@ body {
   width: 80px;
 }
 
-
 .icons {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 15%;
-  margin: 15px;
-  border: 2px solid #00acb5c4;
+  width: 18%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 10px;
+  background-color: white;
+  font-family: Quicksand;
+  padding: 10px;
 }
-
 
 .weather {
   margin: 5px;
