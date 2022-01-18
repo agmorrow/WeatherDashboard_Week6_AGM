@@ -1,18 +1,20 @@
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Assets/css/style.css">
-    <title>Weather Dashboard</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Assets/css/style.css">
+  <title>Weather Dashboard</title>
 </head>
+
 <body>
- 
+
 
   <div class="header">
     <h1 class="headerH1">Weather Dashboard</h1>
   </div>
-  
+
 
   <div class="content">
     <div class="searchByCity">
@@ -20,69 +22,65 @@
       <input type="text" id="searchInput">
       <button type="button" id="searchBtn">Search</button>
       <div class="searchResults"></div>
+      <ul id="searchStorage"></ul>
     </div>
-    
+
     <div class="resultsBox">
       <div class="cityResults">
-      <h2 class="name"></h2>
-      <img id="iconImg">
-      <p class='displayBox'><span class="temp"></span></p>
-      <p class='displayBox'><span class="wind"></span></p>
-      <p class="displayBox"><span class='hum'></span></p>
-      <p class="displayBox"><span class='uv'></span></p>
-      <p class="date"></p>
+        <div class="inlineResults">
+        <h2 class="name"></h2>
+        <img id="iconImg"></div>
+        <p class='displayBox1'><span class="temp"></span></p>
+        <p class='displayBox'><span class="wind"></span></p>
+        <p class="displayBox"><span class='hum'></span></p>
+        <p class="displayBox">UV Index: <span id="uvValue"></span></p>
+        <p class="date"></p>
       </div>
       <h2 class="futureHeading">5-day Forecast:</h2>
       <div class="content">
-      <div id="weatherContainer">
-        
+        <div id="weatherContainer">
           <div class="icons">
-            <p class="weather" id="day2"></p>
             <p class="futureDate2"></p>
-            <img id="futureImage2">
+            <img class="futureIcon" id="futureImage2">
             <p class="futureTemp" id="futureTemp2"></p>
             <p class="futureWind" id="futureWind2"></p>
-            <p class ="futureHum" id="futureHum2"></p>
+            <p class="futureHum" id="futureHum2"></p>
           </div>
           <div class="icons">
-            <p class="weather" id="day3"></p>
             <p class="futureDate3"></p>
-            <img id="futureImage3">
+            <img class="futureIcon" id="futureImage3">
             <p class="futureTemp" id="futureTemp3"></p>
             <p class="futureWind" id="futureWind3"></p>
-            <p class ="futureHum" id="futureHum3"></p>
+            <p class="futureHum" id="futureHum3"></p>
           </div>
           <div class="icons">
-            <p class="weather" id="day4"></p>
             <p class="futureDate4"></p>
-            <img id="futureImage4">
+            <img class="futureIcon" id="futureImage4">
             <p class="futureTemp" id="futureTemp4"></p>
             <p class="futureWind" id="futureWind4"></p>
-            <p class ="futureHum" id="futureHum4"></p>
+            <p class="futureHum" id="futureHum4"></p>
           </div>
           <div class="icons">
-            <p class="weather" id="day5"></p>
             <p class="futureDate5"></p>
-            <img id="futureImage5">
+            <img class="futureIcon" id="futureImage5">
             <p class="futureTemp" id="futureTemp5"></p>
             <p class="futureWind" id="futureWind5"></p>
-            <p class ="futureHum" id="futureHum5"></p>
+            <p class="futureHum" id="futureHum5"></p>
           </div>
           <div class="icons">
-            <p class="weather" id="day1"></p>
             <p class="futureDate6"></p>
-            <img id="futureImage6">
+            <img class="futureIcon" id="futureImage6">
             <p class="futureTemp" id="futureTemp6"></p>
             <p class="futureWind" id="futureWind6"></p>
-            <p class ="futureHum" id="futureHum6"></p>
+            <p class="futureHum" id="futureHum6"></p>
           </div>
         </div>
       </div>
-    </div>  
-    
-  
-<script src="./Assets/js/script.js"></script>
+    </div>
 
-  </body>
-  </html>
-  
+
+    <script src="./Assets/js/script.js"></script>
+
+</body>
+
+</html>

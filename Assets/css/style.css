@@ -25,7 +25,7 @@ body {
 }
 
 /* Left and right column */
-.searchByCity  {
+.searchByCity {
   flex: 15%;
   display: flex;
   flex-direction: column;
@@ -44,7 +44,7 @@ body {
   border-radius: 10px;
   font-size: 18px;
   color: black;
-  background-color:#00ADB5;
+  background-color: #00ADB5;
 }
 
 #searchBtn:hover {
@@ -54,7 +54,6 @@ body {
 .resultsBox {
   flex: 85%;
 }
-
 
 .cityResults {
   border: 2px solid #00acb5c4;
@@ -75,35 +74,41 @@ body {
   justify-content: space-around;
 }
 
-.icon {
-  height: 30px;
-  width: 30px;
+#weatherContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex: 85%;
 }
 
-#weatherContainer {
-  flex: 85%;
+.inlineResults {
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+#iconImg {
+  height: 50px;
+  width: 50px;
+  display: none;
+}
+
+.futureIcon {
+  height: 80px;
+  width: 80px;
 }
 
 
 .icons {
-  display: inline-block;
-  width: 150px;
-  margin: 20px;
-  border: 5px solid rgb(48, 47, 47);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 15%;
+  margin: 15px;
+  border: 2px solid #00acb5c4;
   border-radius: 10px;
 }
 
-
-
-/* .image {
-  height: 140px;
-  width: 100%;
-}
-
-.imgClass {
-  height: 140px;
-  width: 100%;
-} */
 
 .weather {
   margin: 5px;
@@ -112,35 +117,24 @@ body {
   font-weight: bold;
 }
 
-.futureTemp {
-  text-align: center;
-  display: inline-block;
+#uvValue {
+  margin: 5px;
+  padding: 8px;
   border-radius: 5px;
-  height: 25px;
-  width: 85px;
-  margin: 0;
-  margin-bottom: 5px;
-  margin-left: 5px;
+  color: white;
 }
-
-.futureWind {
-  text-align: center;
-  display: inline-block;
-  border-radius: 5px;
-  height: 25px;
-  width: 85px;
-  margin: 0;
-  margin-bottom: 5px;
-  margin-left: 5px;
+.violet {
+  background: #80659c;
 }
-
-.futureHum {
-  text-align: center;
-  display: inline-block;
-  border-radius: 5px;
-  height: 25px;
-  width: 85px;
-  margin: 0;
-  margin-bottom: 5px;
-  margin-left: 5px;
+.red {
+  background: #d85332;
+}
+.orange {
+  background: #e48237;
+}
+.yellow {
+  background: #ecbd3b;
+}
+.green {
+  background: #259f54;
 }
