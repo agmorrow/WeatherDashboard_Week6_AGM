@@ -11,6 +11,7 @@ const displayBox = document.querySelector('.displayBox');
 
 
 
+
 function currentWeatherApi() {
    fetch('https://api.openweathermap.org/data/2.5/weather?q='+searchInput.value+'&units=imperial&appid=8cdc26e92900b592593fbaf2a991cf6e')
    .then(function (response) {
@@ -23,6 +24,7 @@ function currentWeatherApi() {
       let lonValue = data['coord']['lon'];
       let lon = lonValue.toFixed(2);
       let nameValue = data['name'];
+      console.log(data);
 
          fetch('https://api.openweathermap.org/data/2.5/onecall?lat='+ lat + '&lon=' + lon +'&units=imperial&appid=8cdc26e92900b592593fbaf2a991cf6e')
          .then(function (response) {
@@ -30,59 +32,50 @@ function currentWeatherApi() {
          })
          .then(function (data) {
            
-           
-
+            let dateValue = data['daily'][0]['dt'];
+            const milliseconds = dateValue * 1000;
+            const dateObject = new Date(milliseconds).toLocaleDateString();
             let iconValue = data['current']['weather'][0]['icon'];
             let tempValue = data['current']['temp'];
             let windValue = data['current']['wind_speed'];
             let humValue = data['current']['humidity'];
             let uvValue = data['current']['uvi'];
-            let dateValue = data['current']['dt'];
-            const milliseconds = dateValue * 1000;
-            const dateObject = new Date(milliseconds).toLocaleDateString();
-
             weatherImg.setAttribute('src', 'http://openweathermap.org/img/wn/' + iconValue + '@2x.png');
-            
+
             name.innerHTML = nameValue + ' ('+dateObject+')';
-            temp.innerHTML = tempValue + ' &#176F';
-            wind.innerHTML = windValue + ' MPH';
-            hum.innerHTML = humValue + ' %';
-            uv.innerHTML = uvValue;
+            temp.innerHTML = "Temperature: " + tempValue + ' &#176F';
+            wind.innerHTML = "Wind: " + windValue + ' MPH';
+            hum.innerHTML = "Humidity: " + humValue + ' %';
+            uv.innerHTML = "UV Index: " + uvValue;
             console.log(data);
-            console.log(weatherImg);
             
-         }) 
+            for(i=1; i < 6; i++) {
 
+               let futureWeatherImg = document.getElementById('futureImage' + (i+1));
+               let futureDate = document.querySelector('.futureDate' + (i+1));
+               let futureDates = data['daily'][i]['dt'];
+               const milliseconds = futureDates * 1000;
+               const dateObject = new Date(milliseconds).toLocaleDateString();
+               futureDate.innerHTML = dateObject;
+               let futureIconValue = data['daily'][i]['weather'][0]['icon'];
+               futureWeatherImg.setAttribute('src', 'http://openweathermap.org/img/wn/' + futureIconValue + '@2x.png');
+               let futureTemperature = document.getElementById('futureTemp' +(i+1));
+               let futureTemps = data["daily"][i]["temp"]['day'];
+               futureTemperature.innerHTML = "Temperature: " + futureTemps + " &#176F";
+              
+               let futureWind = document.getElementById('futureWind' +(i+1));
+               let futureWinds = data["daily"][i]["humidity"];
+               futureWind.innerHTML = "Wind: " + futureWinds + " MPH";
+
+               let futureHumidity = document.getElementById('futureWind' +(i+1));
+               let futureHum = data["daily"][i]["wind_speed"];
+               futureHumidity.innerHTML = "Humidity: " + futureHum + " %";
+            }
+        })
       })
-      }  
-         
+      }
 
-      
-
-
-// function fiveDayWeatherApi() {
-//   fetch('https://api.openweathermap.org/data/2.5/forecast?q='+searchInput.value+'&cnt=5&units=imperial&appid=8cdc26e92900b592593fbaf2a991cf6e')
-//    .then(response => response.json())
-//    .then(data => {
-//       console.log(data);
-      
-//       let dateValue1 = data['list'][0]['dt_txt'];
-//       // const milliseconds1 = dateValue1 * 1000;
-//       // const dateObject1 = new Date(milliseconds1).toLocaleDateString();
    
-//       let tempValue1 = data['list'][0]['main']['temp'];
-//       let windValue1 = data['list'][0]['wind']['speed'];
-//       let humValue1 = data['list'][0]['main']['humidity'];
-
-//       futureDate.innerHTML = dateValue1;
-//       futureTemp.innerHTML = 'Temp: ' + tempValue1 + ' &#176F';
-//       futureWind.innerHTML = 'Wind: ' + windValue1 + ' MPH';
-//       futureHum.innerHTML = 'Humidity: ' + humValue1 + ' %';
-
-//    })
-// }
-
-
 
 searchBtn.addEventListener('click', function() {
 currentWeatherApi();

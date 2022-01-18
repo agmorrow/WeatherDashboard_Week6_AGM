@@ -80,8 +80,67 @@ body {
   width: 30px;
 }
 
-#weatherCard {
-  border: 1px solid black;
-  
+#weatherContainer {
+  flex: 85%;
 }
 
+
+.icons {
+  display: inline-block;
+  width: 150px;
+  margin: 20px;
+  border: 5px solid rgb(48, 47, 47);
+  border-radius: 10px;
+}
+
+
+
+/* .image {
+  height: 140px;
+  width: 100%;
+}
+
+.imgClass {
+  height: 140px;
+  width: 100%;
+} */
+
+.weather {
+  margin: 5px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.futureTemp {
+  text-align: center;
+  display: inline-block;
+  border-radius: 5px;
+  height: 25px;
+  width: 85px;
+  margin: 0;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+
+.futureWind {
+  text-align: center;
+  display: inline-block;
+  border-radius: 5px;
+  height: 25px;
+  width: 85px;
+  margin: 0;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+
+.futureHum {
+  text-align: center;
+  display: inline-block;
+  border-radius: 5px;
+  height: 25px;
+  width: 85px;
+  margin: 0;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
