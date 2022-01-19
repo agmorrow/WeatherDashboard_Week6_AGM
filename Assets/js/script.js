@@ -9,17 +9,18 @@ const date = document.querySelector('.date');
 const weatherImg = document.getElementById('iconImg');
 const displayBox = document.querySelector('.displayBox');
 const futureForecast = document.querySelector('.icons');
+const saveStorage = document.getElementById('searchStorage');
 
 
 
 function currentWeatherApi() {
    
    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + searchInput.value + '&units=imperial&appid=8cdc26e92900b592593fbaf2a991cf6e')
-      .then(function (response) {
+    
+   .then(function (response) {
          return response.json();
       })
 
-   
 
       .then(function (data) {
          let latValue = data['coord']['lat'];
@@ -99,6 +100,21 @@ function currentWeatherApi() {
 }
 
 searchBtn.addEventListener('click', function () {
+
+const search = searchInput.value; 
+
+      if ("city" && search) {
+         localStorage.setItem("city", search);
+      }
+   
+      for (let i = 0; i < localStorage.length; i++) {
+         const key = localStorage.key(i);
+         const value = localStorage.getItem(key);
+         saveStorage.innerHTML += ` ${value}<br />`
+
+      }
+
    currentWeatherApi();
+ 
 });
 
