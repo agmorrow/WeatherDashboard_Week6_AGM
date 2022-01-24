@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,58 +25,58 @@
       <input type="text" id="searchInput">
       <button type="button" id="searchBtn">Search</button>
       <div class="searchResults"></div>
+      <hr class="lineBreak">
       <ul id="searchStorage"></ul>
     </div>
 
     <div class="resultsBox">
       <div class="cityResults">
         <div class="inlineResults">
-        <h2 class="name"></h2>
-        <img id="iconImg"></div>
+          <h2 class="name"></h2>
+          <img id="iconImg">
+        </div>
         <p class='displayBox'><span class="temp"></span></p>
         <p class='displayBox'><span class="wind"></span></p>
         <p class="displayBox"><span class='hum'></span></p>
-        <p class="displayBox">UV Index: <span id="uvValue"></span></p>
-        
+        <p class="displayBox" id="hideUv">UV Index: <span id="uv"></span></p>
       </div>
+
       <h2 class="futureHeading">5-day Forecast:</h2>
-      <div class="content">
-        <div id="weatherContainer">
-          <div class="icons">
-            <p class="futureDate2"></p>
-            <img class="futureIcon" id="futureImage2">
-            <p class="futureTemp" id="futureTemp2"></p>
-            <p class="futureWind" id="futureWind2"></p>
-            <p class="futureHum" id="futureHum2"></p>
-          </div>
-          <div class="icons">
-            <p class="futureDate3"></p>
-            <img class="futureIcon" id="futureImage3">
-            <p class="futureTemp" id="futureTemp3"></p>
-            <p class="futureWind" id="futureWind3"></p>
-            <p class="futureHum" id="futureHum3"></p>
-          </div>
-          <div class="icons">
-            <p class="futureDate4"></p>
-            <img class="futureIcon" id="futureImage4">
-            <p class="futureTemp" id="futureTemp4"></p>
-            <p class="futureWind" id="futureWind4"></p>
-            <p class="futureHum" id="futureHum4"></p>
-          </div>
-          <div class="icons">
-            <p class="futureDate5"></p>
-            <img class="futureIcon" id="futureImage5">
-            <p class="futureTemp" id="futureTemp5"></p>
-            <p class="futureWind" id="futureWind5"></p>
-            <p class="futureHum" id="futureHum5"></p>
-          </div>
-          <div class="icons">
-            <p class="futureDate6"></p>
-            <img class="futureIcon" id="futureImage6">
-            <p class="futureTemp" id="futureTemp6"></p>
-            <p class="futureWind" id="futureWind6"></p>
-            <p class="futureHum" id="futureHum6"></p>
-          </div>
+      <div id="weatherContainer">
+        <div class="icons">
+          <p class="futureDate2"></p>
+          <img class="futureIcon" id="futureImage2">
+          <p class="futureTemp" id="futureTemp2"></p>
+          <p class="futureWind" id="futureWind2"></p>
+          <p class="futureHum" id="futureHum2"></p>
+        </div>
+        <div class="icons">
+          <p class="futureDate3"></p>
+          <img class="futureIcon" id="futureImage3">
+          <p class="futureTemp" id="futureTemp3"></p>
+          <p class="futureWind" id="futureWind3"></p>
+          <p class="futureHum" id="futureHum3"></p>
+        </div>
+        <div class="icons">
+          <p class="futureDate4"></p>
+          <img class="futureIcon" id="futureImage4">
+          <p class="futureTemp" id="futureTemp4"></p>
+          <p class="futureWind" id="futureWind4"></p>
+          <p class="futureHum" id="futureHum4"></p>
+        </div>
+        <div class="icons">
+          <p class="futureDate5"></p>
+          <img class="futureIcon" id="futureImage5">
+          <p class="futureTemp" id="futureTemp5"></p>
+          <p class="futureWind" id="futureWind5"></p>
+          <p class="futureHum" id="futureHum5"></p>
+        </div>
+        <div class="icons">
+          <p class="futureDate6"></p>
+          <img class="futureIcon" id="futureImage6">
+          <p class="futureTemp" id="futureTemp6"></p>
+          <p class="futureWind" id="futureWind6"></p>
+          <p class="futureHum" id="futureHum6"></p>
         </div>
       </div>
     </div>
