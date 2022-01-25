@@ -178,6 +178,10 @@ width: 100%;
   width: 80px;
 }
 
+#futureImage2, #futureImage3, #futureImage4, #futureImage5, #futureImage6  {
+  display: none;
+}
+
 .icons {
   display: flex;
   flex-direction: column;

@@ -64,6 +64,11 @@ fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + l
             weatherImg.setAttribute('src', 'http://openweathermap.org/img/wn/' + iconValue + '@2x.png');
             document.getElementById("iconImg").style.display = "block";
             document.getElementById("hideUv").style.display = "block";
+            document.getElementById("futureImage2").style.display = "block";
+            document.getElementById("futureImage3").style.display = "block";
+            document.getElementById("futureImage4").style.display = "block";
+            document.getElementById("futureImage5").style.display = "block";
+            document.getElementById("futureImage6").style.display = "block";
 
             name.innerHTML = nameValue + ' (' + dateObject + ')';
             temp.innerHTML = "Temperature: " + tempValue + ' &#176F';
@@ -108,7 +113,6 @@ fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + l
                let futureHum = data["daily"][i]["wind_speed"];
                futureHumidity.innerHTML = "Humidity: " + futureHum + " %";
                }
-
              })
             })
          })
@@ -176,6 +180,11 @@ searchBtn.addEventListener('click', function (event) {
                weatherImg.setAttribute('src', 'http://openweathermap.org/img/wn/' + iconValue + '@2x.png');
                document.getElementById("iconImg").style.display = "block";
                document.getElementById("hideUv").style.display = "block";
+               document.getElementById("futureImage2").style.display = "block";
+               document.getElementById("futureImage3").style.display = "block";
+               document.getElementById("futureImage4").style.display = "block";
+               document.getElementById("futureImage5").style.display = "block";
+               document.getElementById("futureImage6").style.display = "block";
 
                name.innerHTML = nameValue + ' (' + dateObject + ')';
                temp.innerHTML = "Temperature: " + tempValue + ' &#176F';
