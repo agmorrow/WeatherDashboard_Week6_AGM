@@ -1,7 +1,8 @@
+/* Global styling */
 * {
   box-sizing: border-box;
 }
-
+/* Body Styling */
 body {
   margin: 0;
   /* background: linear-gradient(180deg, rgb(84, 179, 214) 0%, rgb(217, 231, 233) 100%); */
@@ -10,7 +11,7 @@ body {
   min-height: 100vh;;
 }
 
-/* Style the header */
+/* Start of header */
 .header {
   background-color: #0168a0;
   color: black;
@@ -24,12 +25,12 @@ body {
   background-color: #0168a0;
   color: white;
 }
-
+/* End of header*/
+/* Start of left column */
 .content {
   display: flex;
 }
 
-/* Left and right column */
 .searchByCity {
   flex: 15%;
   display: flex;
@@ -63,20 +64,23 @@ body {
 ul {
   list-style-type: none;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
 }
 
-li {
+button {
   border-radius: 8px;
   font-size: 18px;
   color: black;
-  background-color: white;
+  background-color: rgb(214, 214, 214);
   font-family: Quicksand;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-top: 10px;
+  text-align: center;
 }
 
-
-#searchBtn:hover, li:hover {
+#searchBtn:hover, button:hover {
   background-color: rgb(233, 233, 233);
 }
 
@@ -89,9 +93,8 @@ width: 100%;
 .resultsBox {
   flex: 85%;
 }
-
-
-
+/* End of left column */
+/* Start of Current Weather */
 .cityResults {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 10px;
@@ -101,6 +104,52 @@ width: 100%;
   font-family:Quicksand;
 }
 
+.inlineResults {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  margin-left: 15px;
+}
+
+#iconImg {
+  height: 50px;
+  width: 50px;
+  display: none;
+}
+
+.displayBox {
+  margin-left: 15px;
+  padding-bottom: 20px;
+  
+}
+
+#uv {
+  margin: 5px;
+  padding: 8px;
+  border-radius: 5px;
+  color: white;
+}
+.purple {
+  background: #886ba7;
+}
+.red {
+  background: #cf4522;
+}
+.orange {
+  background: #e07d32;
+}
+.yellow {
+  background: #f0bf38;
+}
+.green {
+  background: #209e50;
+}
+
+#hideUv {
+  display: none;
+}
+/* End of Current Weather */
+/* Start of Future Weather */
 .futureHeading {
   color: white;
   font-family: Spartan;
@@ -122,25 +171,6 @@ width: 100%;
   flex-direction: row;
   justify-content: space-around;
   flex: 85%;
-}
-
-.inlineResults {
-  display: flex;
-  align-items: center;
-  height: 50px;
-  margin-left: 15px;
-}
-
-.displayBox {
-  margin-left: 15px;
-  padding-bottom: 20px;
-  
-}
-
-#iconImg {
-  height: 50px;
-  width: 50px;
-  display: none;
 }
 
 .futureIcon {
@@ -166,29 +196,4 @@ width: 100%;
   text-align: center;
   font-weight: bold;
 }
-
-#uv {
-  margin: 5px;
-  padding: 8px;
-  border-radius: 5px;
-  color: white;
-}
-.violet {
-  background: #80659c;
-}
-.red {
-  background: #d85332;
-}
-.orange {
-  background: #e48237;
-}
-.yellow {
-  background: #ecbd3b;
-}
-.green {
-  background: #259f54;
-}
-
-#hideUv {
-  display: none;
-}
+/* End of Future Weather */
